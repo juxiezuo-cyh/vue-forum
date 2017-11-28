@@ -1,4 +1,4 @@
-
+require('swiper/dist/css/swiper.css')
 import Vue from 'vue'
 import App from './listApp'
 

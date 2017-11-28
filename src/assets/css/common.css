@@ -1,9 +1,14 @@
-body{
-	background: #f1f0f3;
-	color: #444;
-	padding: 0;
-	margin: 0;
+body,html{
+	min-height: 100%;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-flow: column nowrap;
+	flex-flow: column nowrap;
+	font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
 	font-size: 14px;
+	line-height: 17px;
+	color: #242729;
+	background: #fff;
 }
 
 
@@ -497,6 +502,9 @@ margin-top: 0;
 #tablesheet .weui_actionsheet_cell{
 	padding: 20px 0;
 }
+
+
+/* chengyuhan */
 
 
 
