@@ -46,6 +46,7 @@
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 3;
     border-bottom: 1px solid #DBDBDB;
   }
   .c-nav-ul {
@@ -58,7 +59,7 @@
     vertical-align: middle;
   }
   .c-nav-ul li{
-    padding: 0 12px;
+    padding: 0 0 0 12px;
   }
   .c-nav-ul li a{
     display: inline-block;

@@ -25,8 +25,8 @@ body,html{
 
 .iconfont{
 	font-family:"iconfont";
-font-size:16px;font-style:normal;
-vertical-align: middle;
+	font-size:16px;font-style:normal;
+	vertical-align: middle;
 }                    
 
 
@@ -505,7 +505,10 @@ margin-top: 0;
 
 
 /* chengyuhan */
-
+.marauto_width_1100 {
+	margin: 0 auto;
+	width: 1100px;
+}
 
 
 

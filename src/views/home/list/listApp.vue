@@ -1,18 +1,50 @@
 <template>
-	<div id="app">
+	<div id="app" class="c_index_app">
 		<c-header></c-header>
 		<swiper :options="swiperOption">
 			<swiper-slide v-for="(slide,index) in swiperSlides">
-				<img :src="slide" alt="index">
+				<a href="../tools/ajax.html">
+					<img :src="slide" alt="index">
+				</a>
 			</swiper-slide>
 			<div class="swiper-pagination" slot="pagination"></div>
 		</swiper>
+		<div class="marauto_width_1100">
+			<!-- 问题列表 -->
+			<div class="c-problem-list">
+				<ul class="c-problem-list-nav clearfix">
+					<li class="fl">Top Questions</li>
+					<li class="fr">
+						<a href="">interesting</a>
+					</li>
+					<li class="fr">
+						<a href="">
+							<span>345</span> featured
+						</a>
+					</li>
+					<li class="fr">
+						<a href="">hot</a>
+					</li>
+					<li class="fr">
+						<a href="">week</a> 
+					</li>
+					<li class="fr">
+						<a href=""  class="active">month</a>
+					</li>
+				</ul>
+				<question-detail></question-detail>
+			</div>
+			<div class="div-news fr">
+
+			</div>
+		</div>
 	</div>
 </template>
 
 <script>
-import Lib from 'assets/js/Lib';
+import Lib from 'assets/js/Lib'
 import CHeader from 'components/CHeader'
+import QuestionDetail from 'components/QuestionDetail'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 export default {
 	data() {
@@ -36,7 +68,8 @@ export default {
 	components: {
 		CHeader,
 		swiper,
-		swiperSlide
+		swiperSlide,
+		QuestionDetail
 	},
 	//实例初始化最之前，无法获取到data里的数据
 	beforeCreate() {
@@ -65,11 +98,57 @@ export default {
 </script>
 
 <style scoped>
-	#app {
+	.c_index_app {
 		padding-top: 61px;
 	}
-	#app .swiper-pagination-bullet-active {
+	.c_index_app .swiper-pagination-bullet-active {
 		opacity: 1;
 		background: #fff !important;
+	}
+	.c-problem-list-nav {
+		width: 728px;
+		height: 40px;
+		line-height: 40px;
+		border-bottom: 1px solid #E4E6E8;
+	}
+	.c-problem-list {
+		display: inline-block;
+		margin-top: 15px;
+	}
+	.c-problem-list-nav:nth-child(1) {
+		color: #242729;
+    font-size: 18px;
+	}
+	.c-problem-list-nav li a {
+		padding:0 10px;
+		display: inline-block;
+		color: #848D95;
+		margin: -3px 5px 0;
+		border-left: 1px solid transparent;
+		border-right: 1px solid transparent;
+		border-bottom: transparent solid 1px ;
+		border-top: transparent solid 2px ;
+	}
+	.c-problem-list-nav li a:hover {
+		background: #F9F9FA;
+		color:#535A60;
+		border-bottom: #E4E6E8 solid 1px ;
+	}
+	.c-problem-list-nav li a.active {
+		background: #F9F9FA;
+		color:#535A60;
+		border-top: #F69C55 solid 2px ;
+		border-bottom: #fff solid 1px ;
+		border-left: 1px solid #E4E6E8;
+		border-right: 1px solid #E4E6E8;
+	}
+	.c-problem-list-nav li a:last-child{
+		margin-right: 0;
+	}
+	.div-news {
+		display: inline-block;
+		width: 300px;
+		height: 500px;
+		border: #E4E6E8 1px solid;
 	}
 </style>
