@@ -6,16 +6,16 @@
           <img src="../assets/img/c-logo.png" alt="">
         </a>
       </li>
-      <li class="c-nav fl">
+      <li class="c-nav fl questions">
         <a href="javascript:void(0);">Questions</a>
       </li>
-      <li class="c-nav fl">
+      <li class="c-nav fl developer-jobs">
         <a href="javascript:void(0);">Developer Jobs</a>
       </li>
-      <li class="c-nav fl">
+      <li class="c-nav fl tags">
         <a href="javascript:void(0);">Tags</a>
       </li>
-      <li class="c-nav fl">
+      <li class="c-nav fl users">
         <a href="javascript:void(0);">Users</a>
       </li>
       <li class="fl">
@@ -59,7 +59,7 @@
     vertical-align: middle;
   }
   .c-nav-ul li{
-    padding: 0 0 0 12px;
+    padding: 0 12px;
   }
   .c-nav-ul li a{
     display: inline-block;

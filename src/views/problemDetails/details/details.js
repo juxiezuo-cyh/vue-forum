@@ -1,6 +1,6 @@
 require('swiper/dist/css/swiper.css')
 import Vue from 'vue'
-import App from './listApp'
+import App from './detailsApp'
 
 new Vue({
   render: h => h(App)
