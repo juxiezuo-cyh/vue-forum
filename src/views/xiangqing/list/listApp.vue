@@ -3,7 +3,7 @@
 		<c-header></c-header>
 		<swiper :options="swiperOption">
 			<swiper-slide v-for="(slide,index) in swiperSlides">
-				 <a href="../xiangqing/list.html">
+				 <a href="../home/list.html">
 					<img :src="slide" alt="index">
 				</a> 
 			</swiper-slide>
@@ -36,7 +36,7 @@
 			</div>
 			<div class="div-news fr">
 
-			</div>
+			</div> 
 		</div>
 	</div>
 </template>
