@@ -3,9 +3,9 @@
 		<c-header></c-header>
 		<swiper :options="swiperOption">
 			<swiper-slide v-for="(slide,index) in swiperSlides">
-				 <a href="../problemDetails/details.html">
+				<a href="../problemDetails/details.html">
 					<img :src="slide" alt="index">
-				</a> 
+				</a>
 			</swiper-slide>
 			<div class="swiper-pagination" slot="pagination"></div>
 		</swiper>
@@ -46,9 +46,11 @@ import Lib from 'assets/js/Lib'
 import CHeader from 'components/CHeader'
 import QuestionList from 'components/QuestionList'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
+
 export default {
 	data() {
 		return {
+			ajaxResult: {},
 			swiperOption: {
 				autoplay: 3000,
 				setWrapperSize: true,
@@ -83,23 +85,27 @@ export default {
 	},
 	//已成功挂载，相当ready()
 	mounted() {
-
-
-
+		this.ajax();
 	},
 	//相关操作事件
 	methods: {
-
-
-
-
+		ajax: function() {
+			var self = this;
+			Lib.M.ajax({
+				'url': 'question-for-home',
+				'responseType': 'jsonp',
+				'success': function(data) {
+					self.ajaxResult = data;
+				}
+			});
+		}
 	}
 }
 </script>
 
 <style scoped>
 .c_index_app {
-	padding-top: 61px;
+	margin-top: 61px;
 }
 
 .c-problem-list-nav {
