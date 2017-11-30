@@ -79,6 +79,9 @@
     border-radius: 0;
     box-shadow: inset 0 0 1px rgba(145,153,161,0.2), 0 0 0 rgba(255,255,255,0);
   }
+  .c-nav-ul li.c-sign-up {
+    padding: 0 0 0 12px;
+  }
   .c-sign-up a{
     height: 32px;
     padding: 0 13px;
