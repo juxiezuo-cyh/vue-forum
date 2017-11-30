@@ -32,7 +32,7 @@
 						<a href="" class="active">month</a>
 					</li>
 				</ul>
-				<question-detail></question-detail>
+				<question-list></question-list>
 			</div>
 			<div class="div-news fr">
 
@@ -44,7 +44,7 @@
 <script>
 import Lib from 'assets/js/Lib'
 import CHeader from 'components/CHeader'
-import QuestionDetail from 'components/QuestionDetail'
+import QuestionList from 'components/QuestionList'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 export default {
 	data() {
@@ -69,7 +69,7 @@ export default {
 		CHeader,
 		swiper,
 		swiperSlide,
-		QuestionDetail
+		QuestionList
 	},
 	//实例初始化最之前，无法获取到data里的数据
 	beforeCreate() {
