@@ -5,6 +5,7 @@
 			<!-- 问题题目 -->
 			<h1 class="titile">
 				<a href="">Printing from Phone to Hp Printer via Wifi</a>
+				<a href="">源自：<i>源自：</i></a>
 			</h1>
 			<!-- 问题详细描述 -->
 			<div class="center">
@@ -51,11 +52,13 @@
 import Lib from 'assets/js/Lib'
 import CHeader from 'components/CHeader'
 import { VueEditor } from 'vue2-editor'
-import axios from 'axios'
+import Common from 'assets/js/common'
 export default {
 	data() {
 		return {
-			content: ''
+			content: '',
+			url:'',
+			questionDetail:{}
 		}
 	},
 	components: {
@@ -67,12 +70,24 @@ export default {
 	},
 	//在挂载开始之前被调用
 	beforeMount() {
+		this.getUrl('id')
 	},
 	//已成功挂载，相当ready()
 	mounted() {
+		this.getQuestionDetail()
 	},
 	//相关操作事件
 	methods: {
+		getQuestionDetail() {
+			Lib.questionDetail({'id':this.url}).then(res => {
+				if(res.code === 0) {
+					this.questionDetail = res.data
+				}
+			})
+		},
+		getUrl(id) {
+			this.url = Common.getUrlQuery(id)
+		},
 		saveContent: function() {
 			// You have the content to save
 			console.log(this.content)
@@ -123,14 +138,23 @@ export default {
 }
 
 .titile {
-	font-size: 24px;
 	font-weight: normal;
-	color: #242729;
-	line-height: 67px;
 	border-bottom: 1px solid #E4E6E8;
 	margin-bottom: 13px;
 }
 
+.titile a:nth-child(1) {
+	font-size: 24px;
+	color: #242729;
+	display: block;
+	padding: 20px 0 10px;
+}
+.titile a:nth-child(2) {
+	font-size: 15px;
+	line-height: 25px;
+	color: #39739D;
+	display: block;
+}
 .center {
 	display: inline-block;
 	font-size: 15px;

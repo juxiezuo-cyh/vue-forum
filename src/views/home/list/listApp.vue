@@ -32,7 +32,7 @@
 						<a href="" class="active">month</a>
 					</li>
 				</ul>
-				<question-list></question-list>
+				<question-list :questionList='questionList'></question-list>
 			</div>
 			<div class="div-news fr">
 
@@ -50,6 +50,7 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper'
 export default {
 	data() {
 		return {
+			questionList:[],
 			ajaxResult: {},
 			swiperOption: {
 				autoplay: 3000,
@@ -90,12 +91,11 @@ export default {
 	//相关操作事件
 	methods: {
 		ajax: function() {
-			var self = this;
-			Lib.M.ajax({
-				'url': 'question-for-home',
-				'responseType': 'jsonp',
-				'success': function(data) {
-					self.ajaxResult = data;
+			Lib.questionHome().then(res => {
+				if (res.code === 0) {
+					this.questionList = res.data.list;
+				} else {
+
 				}
 			});
 		}

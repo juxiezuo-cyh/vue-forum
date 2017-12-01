@@ -5,5 +5,3 @@ import App from './listApp'
 new Vue({
   render: h => h(App)
 }).$mount('#app')
-
-// Vue.prototype.HOST = '/api'

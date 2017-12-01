@@ -30,15 +30,9 @@ module.exports = {
     port: 8091,
     autoOpenBrowser: true,
     assetsSubDirectory: "static",
-    assetsPublicPath: "/"
-    // proxyTable: {
-    //   "/api": {
-    //     target: "http://keybuffer.cn:8081/question",
-    //     changeOrigin: true,
-    //     pathRewrite: {
-    //       "^/api": ""
-    //     }
-    //   }
+    assetsPublicPath: "/",
+    proxyTable: {
+      
     },
 
     // CSS Sourcemaps off by default because relative paths are "buggy"
