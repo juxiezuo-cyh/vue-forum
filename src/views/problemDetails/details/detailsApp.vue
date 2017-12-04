@@ -4,37 +4,26 @@
 		<div class="marauto_width_1100">
 			<!-- 问题题目 -->
 			<h1 class="titile">
-				<a href="">Printing from Phone to Hp Printer via Wifi</a>
-				<a href="">源自：<i>源自：</i></a>
+				<a href="" v-html="questionDetail.title"></a>
+				<a :href="questionDetail.src" target='block'>源自：
+					<i v-html="questionDetail.src"></i>
+				</a>
 			</h1>
+			<div class="flg">
+				<a href="javascript:void(0);" v-for="(item, index) in questionDetail.tag">{{item}}</a>
+			</div>
 			<!-- 问题详细描述 -->
 			<div class="center">
-				<p class="detail">
-					0 down vote favorite 1 I have saved My ListView items as a Pdf file in local Storage,but not able to print the Pdf file and also can't open it. It shows the error like this : "Cannot display pdf (myfile.pdf is in Invalid format)"
-				</p>
+				<p class="detail" v-html="questionDetail.content"></p>
 				<!-- 答案列表 -->
-				<div class="answer-list">
-					<h2 class="your-answer">1 Answer</h2>
-					<p class="answer">
-						File fileDir = new File( Environment.getExternalStorageDirectory(), "Android/data/mypackage/"); if (!fileDir.exists()) fileDir.mkdirs(); File newFile = new File(fileDir, fileName+ ".pdf"); BufferedWriter bw = new BufferedWriter(new FileWriter(newFile, false)); /* * Write a header row. */ bw.write("Description" + "\t\t\t" + "Value"); /* * and a row for each result, comma separated */ for (int i = 0; i
-						< jewelleryDetailsList.size(); i++) { String row=n ew String(); row=j ewelleryDetailsList.get(i).getLine1() + "\t\t" + jewelleryDetailsList.get(i).getLine2(); bw.write(row); } bw.close(); 
-					</p>
-					<div class="flg">
-						<a href="">mysql</a>
-						<a href="">group-concat</a>
-					</div>
+				<div class="answer-list" v-for="(item,index) in questionDetail.answer">
+					<h2 class="your-answer">
+						<span>{{index+1}}</span> Answer
+					</h2>
+					<p class="answer" v-html="item"></p>
+					
 				</div>
-				<div class="answer-list">
-					<h2 class="your-answer">2 Answer</h2>
-					<p class="answer">
-						File fileDir = new File( Environment.getExternalStorageDirectory(), "Android/data/mypackage/"); if (!fileDir.exists()) fileDir.mkdirs(); File newFile = new File(fileDir, fileName+ ".pdf"); BufferedWriter bw = new BufferedWriter(new FileWriter(newFile, false)); /* * Write a header row. */ bw.write("Description" + "\t\t\t" + "Value"); /* * and a row for each result, comma separated */ for (int i = 0; i
-						< jewelleryDetailsList.size(); i++) { String row=n ew String(); row=j ewelleryDetailsList.get(i).getLine1() + "\t\t" + jewelleryDetailsList.get(i).getLine2(); bw.write(row); } bw.close(); 
-					</p>
-					<div class="flg">
-						<a href="">mysql</a>
-						<a href="">group-concat</a>
-					</div>
-				</div>
+				
 				<p class="share-title">Know someone who can answer? Share a link to this question via email, Google+, Twitter, or Facebook.</p>
 				<h2 class="your-answer">Your Answer</h2>
 				<!-- 编辑器 -->
@@ -57,8 +46,8 @@ export default {
 	data() {
 		return {
 			content: '',
-			url:'',
-			questionDetail:{}
+			url: '',
+			questionDetail: {}
 		}
 	},
 	components: {
@@ -79,9 +68,11 @@ export default {
 	//相关操作事件
 	methods: {
 		getQuestionDetail() {
-			Lib.questionDetail({'id':this.url}).then(res => {
-				if(res.code === 0) {
+			Lib.questionDetail({ 'id': this.url }).then(res => {
+				if (res.code === 0) {
 					this.questionDetail = res.data
+				} else {
+					alert(res.msg)
 				}
 			})
 		},
@@ -149,12 +140,14 @@ export default {
 	display: block;
 	padding: 20px 0 10px;
 }
+
 .titile a:nth-child(2) {
 	font-size: 15px;
 	line-height: 25px;
 	color: #39739D;
 	display: block;
 }
+
 .center {
 	display: inline-block;
 	font-size: 15px;

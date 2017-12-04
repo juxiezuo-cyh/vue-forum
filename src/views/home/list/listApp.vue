@@ -95,7 +95,7 @@ export default {
 				if (res.code === 0) {
 					this.questionList = res.data.list;
 				} else {
-
+						alert(res.msg)
 				}
 			});
 		}
