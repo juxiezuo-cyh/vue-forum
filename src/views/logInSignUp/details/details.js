@@ -1,27 +1,30 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import App from "./detailsApp";
-// import logIn from "./logInApp";
-// import signUp from "./signUpApp";
+import logIn from "./logInApp";
+import signUp from "./signUpApp";
 
-// const routes = [
-//   { 
-//     path: "/logIn", 
-//     component: logIn 
-//   },
-//   { 
-//     path: "/signUp", 
-//     component: signUp 
-//   }
-// ];
+Vue.use(VueRouter);
 
-// Vue.use(VueRouter);
-
-// const router = new VueRouter({
-//   routes: routes,
-//   mode: "history"
-// });
+const router = new VueRouter({
+  // mode: 'history', //加上不好使。出不来
+  routes: [
+    {
+      path: "", 
+      component: logIn 
+    },
+    { 
+      path: "/logIn", 
+      component: logIn 
+    },
+    { 
+      path: "/signUp", 
+      component: signUp 
+    }
+  ]
+});
 
 new Vue({
-  router: h => h(App)
-}).$mount("#app");
+  render: h => h(App),
+  router: router
+}).$mount('#app')

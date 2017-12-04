@@ -1,7 +1,7 @@
 <template>
   <div>
 		<!-- <router-link to='/logIn'>	</router-link> -->
-		
+		gfdgdfdsasd
   </div>
 </template>
 
