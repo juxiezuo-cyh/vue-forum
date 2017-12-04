@@ -16,14 +16,12 @@
 			<div class="center">
 				<p class="detail" v-html="questionDetail.content"></p>
 				<!-- 答案列表 -->
-				<div class="answer-list" v-for="(item,index) in questionDetail.answer">
+				<div class="answer-list" v-if="questionDetail.answer" v-for="(item,index) in questionDetail.answer">
 					<h2 class="your-answer">
 						<span>{{index+1}}</span> Answer
 					</h2>
 					<p class="answer" v-html="item"></p>
-					
 				</div>
-				
 				<p class="share-title">Know someone who can answer? Share a link to this question via email, Google+, Twitter, or Facebook.</p>
 				<h2 class="your-answer">Your Answer</h2>
 				<!-- 编辑器 -->

@@ -26,10 +26,10 @@
             <div class="fl list-right-div">
               <a href="" v-for="(tag,index) in item.tag">{{tag}}</a>
             </div>
-            <div class="fr">
+            <!-- <div class="fr">
               <a href="">mysql</a>
               <a href="">group-concat</a>
-            </div>
+            </div> -->
           </div>
         </li>
       </ul>
