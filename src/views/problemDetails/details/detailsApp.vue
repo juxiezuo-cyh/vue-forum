@@ -37,6 +37,7 @@
 
 <script>
 import Lib from 'assets/js/Lib'
+import Api from 'assets/js/api'
 import CHeader from 'components/CHeader'
 import { VueEditor } from 'vue2-editor'
 import Common from 'assets/js/common'
@@ -66,7 +67,7 @@ export default {
 	//相关操作事件
 	methods: {
 		getQuestionDetail() {
-			Lib.questionDetail({ 'id': this.url }).then(res => {
+			Api.questionDetail({ 'id': this.url }).then(res => {
 				if (res.code === 0) {
 					this.questionDetail = res.data
 				} else {

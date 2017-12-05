@@ -4,19 +4,19 @@
     <ul class="info-list">
       <li>
         <label for="Name">Display Name</label><br/>
-        <input type="text" id="Name" placeholder="J. Doe">
+        <input type="text" id="Name" placeholder="J. Doe" v-model="username">
       </li>
       <li>
         <label for="Email">Email</label><br/>
-        <input type="text" id="Email" placeholder="you@example.org">
+        <input type="text" id="Email" placeholder="you@example.org" v-model="email">
       </li>
       <li>
         <label for="password">Password</label><br/>
-        <input type="text" id="password" placeholder="********">
+        <input type="password" id="password" placeholder="********" v-model="password">
       </li>
       <li class="">
         <a href="" class="more-login-options">more login options</a>
-        <a href="" class="log-in-btn fr">Log in</a>
+        <a href="javascript:void(0);" class="log-in-btn fr" @click="SignUp">Sign up</a>
       </li>
       <li class="registering">By registering, you agree to the privacy policy and terms of service.</li>
     </ul>
@@ -32,32 +32,29 @@
 </template>
 
 <script>
-  import Lib from 'assets/js/Lib';
+  import Lib from 'assets/js/Lib'
+  import Api from 'assets/js/api'
   export default {
-    components: {
-  
-  
-  
-    },
-  
     data() {
-  
       return {
-  
-  
-  
+        username:'',
+        email:'',
+        password:''
       }
-  
     },
-  
     methods: {
-  
-  
-  
-  
-  
+      SignUp() {
+        const userData = {
+          'username': this.username,
+          'email': this.email,
+          'password': this.password
+        }
+        let params = Object.assign({}, userData);//将userData复制到{}中。并且返回给params
+        Api.userSignup(params).then(res => {
+          console.log(res)
+        })
+      }
     }
-  
   }
 </script>
 

@@ -1,5 +1,4 @@
 require("assets/css/common.css");
-import axios from "axios";
 //注册时，vux必须放在 import Vue from 'vue'; 之前，否侧打包的体积非常大，估计是vux OR vue 抽风了
 import { AlertPlugin, LoadingPlugin } from "vux";
 
@@ -19,23 +18,7 @@ import vueFilter from "./vueFilter";
 import FastClick from "fastclick";
 FastClick.attach(document.body);
 
-axios.defaults.baseURL = "http://keybuffer.cn:8081/question";
-
-export function fetch(url, params) {
-  return axios.get(url, { params: params }).then(res => res.data);
-}
-
-export function fetchPost(url, params) {
-  return axios.post(url, params).then(res => res.data);
-}
-
 export default {
   M,
-  C,
-  questionHome(params) {
-    return fetch("/question-for-home", params);
-  },
-  questionDetail(params) {
-    return fetch("/question", params);
-  }
+  C
 };

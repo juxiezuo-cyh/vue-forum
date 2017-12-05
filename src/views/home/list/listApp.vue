@@ -43,6 +43,7 @@
 
 <script>
 import Lib from 'assets/js/Lib'
+import Api from 'assets/js/api'
 import CHeader from 'components/CHeader'
 import QuestionList from 'components/QuestionList'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
@@ -91,7 +92,7 @@ export default {
 	//相关操作事件
 	methods: {
 		ajax () {
-			Lib.questionHome().then(res => {
+			Api.questionHome().then(res => {
 				if (res.code === 0) {
 					this.questionList = res.data.list;
 				} else {
