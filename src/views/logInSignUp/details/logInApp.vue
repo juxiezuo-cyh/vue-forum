@@ -79,7 +79,7 @@
     margin:  20px  auto 0;
     border: 1px solid #E4E6E8;
   }
-  .sign-up,.log-in-on-talent {
+  .sign-up,.log-in-on-talent,.more-login-options {
     color:#0077CC;
   }
   label {
@@ -113,7 +113,7 @@
   }
   .log-in-btn {
     height: 32px;
-    padding: 0 40px;
+    padding: 3px 40px;
     font-size: 13px;
     background: none;
     border-radius: 2px;

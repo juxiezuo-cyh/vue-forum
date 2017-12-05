@@ -90,7 +90,7 @@ export default {
 	},
 	//相关操作事件
 	methods: {
-		ajax: function() {
+		ajax () {
 			Lib.questionHome().then(res => {
 				if (res.code === 0) {
 					this.questionList = res.data.list;

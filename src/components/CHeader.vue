@@ -2,8 +2,8 @@
   <div class="c-header-box">
     <ul class="c-nav-ul clearfix">
       <li class="c-logo c-nav fl">
-        <a href="javascript:void(0);">
-          <img src="../assets/img/c-logo.png" alt="">
+        <a href="../home/list.html">
+          <img src="../assets/img/c-logo.png">
         </a>
       </li>
       <li class="c-nav fl questions">
@@ -22,10 +22,10 @@
         <input type="text" class="ipt-search">
       </li>
       <li class="fr c-sign-up">
-        <a href="javascript:void(0);">Sign Up</a>
+        <a href="../logInSignUp/details.html#/signUp">Sign Up</a>
       </li>
       <li class="c-log-in fr">
-        <a href="javascript:void(0);">Log In</a>
+        <a href="../logInSignUp/details.html#/logIn">Log In</a>
       </li>
     </ul>
   </div>

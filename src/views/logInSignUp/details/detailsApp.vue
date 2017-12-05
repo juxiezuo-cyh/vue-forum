@@ -2,7 +2,7 @@
   <div id="app">
     <c-header></c-header>
     <div class="nav">
-      <router-link to='/logIn' class="active">Log in</router-link>
+      <router-link to='/logIn' @click.native="logIn">Log in</router-link>
       <router-link to='/signUp'>Sign up</router-link>
     </div>
     <keep-alive>
@@ -21,6 +21,14 @@ export default {
   },
   components: {
     CHeader
+  },
+  methods: {
+    logIn(e){
+      // console.log(e)
+    }
+  },
+  mounted () {
+    
   }
 }
 </script>
@@ -31,7 +39,7 @@ export default {
     margin: 61px auto 0;
     padding: 25px 15px;
   }
-  .nav a.active{
+  .nav a.router-link-active{
     color: #535A60;
     border-top: #F69C55 solid 2px;
     border-bottom: #fff solid 1px;
