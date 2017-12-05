@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <div class="title">Create your Stack Overflow account. It's free and only takes a minute.</div>
+    <div class="title">Stack Overflow is part of the Stack Exchange network of 170 Q&A communities.</div>
     <ul class="info-list">
       <li>
         <label for="Email">Email</label><br/>
