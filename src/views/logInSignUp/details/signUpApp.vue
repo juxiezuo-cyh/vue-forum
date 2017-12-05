@@ -51,7 +51,9 @@
         }
         let params = Object.assign({}, userData);//将userData复制到{}中。并且返回给params
         Api.userSignup(params).then(res => {
-          console.log(res)
+          if (res.code === 0) {
+            
+          }
         })
       }
     }
