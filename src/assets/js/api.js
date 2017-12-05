@@ -18,6 +18,6 @@ export default {
     return fetch("/question/question", params);
   },
   userSignup(params) {
-    return fetchPost("/user/signup", params);
+    return fetch("/user/signup", params);
   }
 };
