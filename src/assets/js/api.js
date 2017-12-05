@@ -19,5 +19,5 @@ export default {
   },
   userSignup(params) {
     return fetch("/user/signup", params);
-  }
+  } 
 };
