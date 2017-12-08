@@ -22,10 +22,10 @@
     </ul>
     <ul class="switch">
       <li>
-        Don't have an account? <a href="" class="sign-up">Sign up</a> 
+        Don't have an account? <a href="" class="sign-up">Sign up</a>
       </li>
       <li>
-        Are you an employer? <a href="" class="log-in-on-talent">Log in on Talent</a> 
+        Are you an employer? <a href="" class="log-in-on-talent">Log in on Talent</a>
       </li>
     </ul>
   </div>
@@ -37,24 +37,78 @@
   export default {
     data() {
       return {
-        username:'',
-        email:'',
-        password:''
+        username: '',
+        email: '',
+        password: '',
+        tagUserName: true,
+        tagEmail: true,
+        tagPassWord: true
       }
     },
     methods: {
+      checkValue(_v,type) {
+        console.log(_v)
+        switch (type) {
+          case "username":
+            let v = /^[A-Za-z0-9_\-\u4e00-\u9fa5]+$/;
+            if (!_v) {
+              alert("真实姓名不能为空！");
+              this.tagUserName = false;
+            } else if (!v.test(_v)) {
+              alert("真实姓名输入有误！");
+              this.tagUserName = false;
+            } else {
+              this.tagUserName = true; //标志该输入框验证通过
+            }
+            break;
+          case "email":
+            let v1 =/\w+((-w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+/;
+            if (!_v) {
+              alert("邮箱地址不能为空！");
+              this.tagEmail = false;
+              return
+            } else if (!v1.test(_v)) {
+              alert("邮箱地址有误！");
+              this.tagEmail = false;
+              return
+            } else {
+              this.tagEmail = true;
+            }
+            break;
+          case "password":
+          let v2 = /^[A-Za-z0-9_-]+$/;
+            if (!_v) {
+              alert("登录密码不能为空！");
+              this.tagPassWord = false;
+            }else if (!v2.test(_v)) {
+              alert("登录密码格式为字母和数字的组合！");
+              this.tagPassWord = false;
+              return
+            } else {
+              this.tagPassWord = true;
+            }
+            break;
+        }
+      },
       SignUp() {
-        const userData = {
+        let userData = {
           'username': this.username,
           'email': this.email,
           'password': this.password
         }
-        let params = Object.assign({}, userData);//将userData复制到{}中。并且返回给params
-        Api.userSignup(params).then(res => {
-          if (res.code === 0) {
-            
-          }
-        })
+        this.checkValue(userData.username,'username');
+        this.checkValue(userData.email,'email');
+        this.checkValue(userData.password,'password');
+        let params = Object.assign({}, userData); //将userData复制到{}中。并且返回给params
+        if (this.tagUserName && this.tagEmail && this.tagPassWord) {
+          Api.userSignup(params).then(res => {
+            if (res.code === 0) {
+              window.location.href = '../../views/home/list.html'
+            } else {
+              alert(res.msg)
+            }
+          })
+        }
       }
     }
   }
@@ -69,19 +123,21 @@
   .info-list {
     width: 280px;
     padding: 30px;
-    margin:  0  auto;
+    margin: 0 auto;
     border: 1px solid #E4E6E8;
   }
   .switch {
     text-align: center;
     line-height: 25px;
     width: 300px;
-    padding: 20px; 
-    margin:  20px  auto 0;
+    padding: 20px;
+    margin: 20px auto 0;
     border: 1px solid #E4E6E8;
   }
-  .sign-up,.log-in-on-talent,.more-login-options {
-    color:#0077CC;
+  .sign-up,
+  .log-in-on-talent,
+  .more-login-options {
+    color: #0077CC;
   }
   label {
     font-weight: bold;
@@ -100,7 +156,7 @@
     outline: none;
     cursor: auto !important;
   }
-  input:hover{
+  input:hover {
     border: #ADD8E6 1px solid;
   }
   .log-in-btn {
@@ -121,6 +177,6 @@
     padding-top: 20px;
     font-size: 12px;
     text-align: center;
-    color:#6A737C;
+    color: #6A737C;
   }
 </style>
