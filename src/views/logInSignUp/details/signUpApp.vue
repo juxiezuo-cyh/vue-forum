@@ -47,7 +47,6 @@
     },
     methods: {
       checkValue(_v,type) {
-        console.log(_v)
         switch (type) {
           case "username":
             let v = /^[A-Za-z0-9_\-\u4e00-\u9fa5]+$/;
@@ -81,7 +80,7 @@
               alert("登录密码不能为空！");
               this.tagPassWord = false;
             }else if (!v2.test(_v)) {
-              alert("登录密码格式为字母和数字的组合！");
+              alert("登录密码格式为字母数字的组合！");
               this.tagPassWord = false;
               return
             } else {

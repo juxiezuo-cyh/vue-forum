@@ -2,8 +2,8 @@
   <div id="app">
     <c-header></c-header>
     <div class="nav">
-      <router-link to='/logIn' @click.native="logIn">Log in</router-link>
-      <router-link to='/signUp'>Sign up</router-link>
+      <router-link to='/logIn' @click.native="logIn">登录</router-link>
+      <router-link to='/signUp'>注册</router-link>
     </div>
     <keep-alive>
       <router-view></router-view>

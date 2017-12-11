@@ -7,25 +7,25 @@
         </a>
       </li>
       <li class="c-nav fl questions">
-        <a href="javascript:void(0);">Questions</a>
+        <a href="javascript:void(0);">问题</a>
       </li>
       <li class="c-nav fl developer-jobs">
-        <a href="javascript:void(0);">Developer Jobs</a>
+        <a href="javascript:void(0);">文档</a>
       </li>
-      <li class="c-nav fl tags">
+      <!-- <li class="c-nav fl tags">
         <a href="javascript:void(0);">Tags</a>
       </li>
       <li class="c-nav fl users">
         <a href="javascript:void(0);">Users</a>
-      </li>
+      </li> -->
       <li class="fl">
         <input type="text" class="ipt-search">
       </li>
       <li class="fr c-sign-up">
-        <a href="../logInSignUp/details.html#/signUp">Sign Up</a>
+        <a href="../logInSignUp/details.html#/signUp">注册</a>
       </li>
       <li class="c-log-in fr">
-        <a href="../logInSignUp/details.html#/logIn">Log In</a>
+        <a href="../logInSignUp/details.html#/logIn">登录</a>
       </li>
     </ul>
   </div>
