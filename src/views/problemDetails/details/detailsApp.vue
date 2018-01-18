@@ -161,6 +161,10 @@
 	.detail {
 		padding: 10px;
 		border-bottom: 1px solid #E4E6E8;
+		width: 728px;
+		line-height: 22px;
+		word-break:break-all;
+		overflow:auto;
 	}
 	
 	.answer {
@@ -202,5 +206,8 @@
 	.answer-list {
 		padding-bottom: 15px;
 		border-bottom: 1px solid #E4E6E8;
+		width: 728px;
+		word-break:break-all;
+		overflow:auto;
 	}
 </style>
